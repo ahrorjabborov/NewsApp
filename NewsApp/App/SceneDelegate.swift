@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    let apiKey = "41726bd5418c4de798e663da7f509944" // if you reach the limit, please replace this
+    let apiKey = "b9e3b9cb372a4049a862a68ec83e59fe" // if you reach the limit, please replace this
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

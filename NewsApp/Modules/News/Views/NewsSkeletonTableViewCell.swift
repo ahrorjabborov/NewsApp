@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 // this is a simple skeleton cell for loading
-
 final class SkeletonNewsTableViewCell: UITableViewCell {
     static let identifier = "SkeletonNewsTableViewCell"
     

@@ -182,7 +182,7 @@ final class NewsDetailViewController: UIViewController {
         titleLabel.text = viewModel.detailTitle
         descriptionLabel.text = viewModel.detailDescription
         sourceLabel.text = viewModel.detailSourceName
-        dateLabel.text = formatDate(from: viewModel.detailPublishDate)
+        dateLabel.text = viewModel.formatDate(from: viewModel.detailPublishDate)
         linkLabel.text = viewModel.detailFullArticleURL
         
         if let urlString = viewModel.detailImageURL {
@@ -194,20 +194,9 @@ final class NewsDetailViewController: UIViewController {
         }
     }
     
-    private func formatDate(from dateString: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        
-        if let date = dateFormatter.date(from: dateString) {
-            dateFormatter.dateFormat = "MMM d, yyyy - h:mm a" // Jan 23, 2025 - 11:23 AM
-            return dateFormatter.string(from: date)
-        }
-        return "Invalid Date"
-    }
-    
     private func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else {
-//            newsImageView.image = UIImage(systemName: "photo")
+            //            newsImageView.image = UIImage(systemName: "photo")
             return
         }
         

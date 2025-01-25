@@ -16,7 +16,6 @@ final class NewsViewModel: ObservableObject {
     @Published private(set) var visits: [String: Int] = [:]
     @Published var selectedArticle: Article?
     @Published var fetchError: String? = nil
-    
     @Published private(set) var isOffline = false
     
     private var currentPage = 1
@@ -136,6 +135,17 @@ final class NewsViewModel: ObservableObject {
             let dateB = dateFormatter.date(from: b.publishedAt ?? "") ?? .distantPast
             return dateA > dateB
         }
+    }
+    
+    func formatDate(from dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        if let date = dateFormatter.date(from: dateString) {
+            dateFormatter.dateFormat = "MMM d, yyyy - h:mm a" // Jan 23, 2025 - 11:23 AM
+            return dateFormatter.string(from: date)
+        }
+        return "Invalid Date"
     }
     
     // MARK: - Visits

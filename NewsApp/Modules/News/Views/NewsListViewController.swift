@@ -80,21 +80,21 @@ final class NewsListViewController: UIViewController {
     }()
     
     private lazy var tableView: UITableView = {
-        let tbl = UITableView(frame: .zero, style: .plain)
-        tbl.backgroundColor = .white
-        tbl.separatorStyle = .none
-        tbl.showsVerticalScrollIndicator = false
-        tbl.register(NewsTableViewCell.self,
-                     forCellReuseIdentifier: NewsTableViewCell.identifier)
-        tbl.register(SkeletonNewsTableViewCell.self,
-                     forCellReuseIdentifier: SkeletonNewsTableViewCell.identifier)
+        let table = UITableView(frame: .zero, style: .plain)
+        table.backgroundColor = .white
+        table.separatorStyle = .none
+        table.showsVerticalScrollIndicator = false
+        table.register(NewsTableViewCell.self,
+                       forCellReuseIdentifier: NewsTableViewCell.identifier)
+        table.register(SkeletonNewsTableViewCell.self,
+                       forCellReuseIdentifier: SkeletonNewsTableViewCell.identifier)
         
-        tbl.dataSource = self
-        tbl.delegate = self
-        tbl.rowHeight = 180
-        tbl.estimatedRowHeight = 180
-        tbl.refreshControl = refreshControl
-        return tbl
+        table.dataSource = self
+        table.delegate = self
+        table.rowHeight = 180
+        table.estimatedRowHeight = 180
+        table.refreshControl = refreshControl
+        return table
     }()
     
     private lazy var noResultsLabel: UILabel = {
@@ -234,9 +234,9 @@ final class NewsListViewController: UIViewController {
             .sink { [weak self] offline in
                 guard let self = self else { return }
                 
-                let df = DateFormatter()
-                df.dateFormat = "MMMM d"
-                let dateString = df.string(from: Date())
+                let formatter = DateFormatter()
+                formatter.dateFormat = "MMMM d"
+                let dateString = formatter.string(from: Date())
                 let status = offline ? "Offline" : "Online"
                 self.secondLineLabel.text = "\(dateString) - \(status)"
                 
@@ -282,8 +282,8 @@ final class NewsListViewController: UIViewController {
             guard let self = self else { return }
             let text = alert.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            if let q = text, !q.isEmpty {
-                self.fetchWithCustomQuery(q)
+            if let query = text, !query.isEmpty {
+                self.fetchWithCustomQuery(query)
             } else {
                 // If empty, revert to "politics"
                 self.fetchWithCustomQuery("politics")

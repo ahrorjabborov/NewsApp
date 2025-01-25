@@ -13,50 +13,50 @@ final class NewsTableViewCell: UITableViewCell {
     static let identifier = "NewsTableViewCell"
     
     private lazy var containerView: UIView = {
-        let v = UIView()
-        v.backgroundColor = UIColor(hex: "F8F8F8")
-        v.layer.cornerRadius = 12
-        return v
+        let view = UIView()
+        view.backgroundColor = UIColor(hex: "F8F8F8")
+        view.layer.cornerRadius = 12
+        return view
     }()
     private lazy var sourceLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = UIColor(hex: "0A2D73")
-        lbl.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        return lbl
+        let label = UILabel()
+        label.textColor = UIColor(hex: "0A2D73")
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        return label
     }()
     private lazy var titleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
-        lbl.numberOfLines = 0
-        return lbl
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
     }()
     private lazy var eyeIcon: UIImageView = {
-        let iv = UIImageView()
-        iv.image = UIImage(systemName: "eye")
-        iv.tintColor = UIColor(hex: "667085")
-        iv.contentMode = .scaleAspectFit
-        return iv
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "eye")
+        imageView.tintColor = UIColor(hex: "667085")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     private lazy var visitsLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = UIColor(hex: "667085")
-        lbl.font = UIFont.systemFont(ofSize: 14)
-        return lbl
+        let label = UILabel()
+        label.textColor = UIColor(hex: "667085")
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
     }()
     private lazy var dateLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = UIColor(hex: "667085")
-        lbl.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        return lbl
+        let label = UILabel()
+        label.textColor = UIColor(hex: "667085")
+        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        return label
     }()
     private lazy var newsImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFill
-        iv.layer.cornerRadius = 8
-        iv.backgroundColor = .secondarySystemBackground
-        return iv
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 8
+        imageView.backgroundColor = .secondarySystemBackground
+        return imageView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -120,11 +120,11 @@ final class NewsTableViewCell: UITableViewCell {
     }
     
     private func formatDate(_ isoString: String) -> String {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        if let date = df.date(from: isoString) {
-            df.dateFormat = "MMM d, yyyy - h:mm a"
-            return df.string(from: date)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        if let date = formatter.date(from: isoString) {
+            formatter.dateFormat = "MMM d, yyyy - h:mm a"
+            return formatter.string(from: date)
         }
         return isoString
     }

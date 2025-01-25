@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7A7F09772D4246AB00EA5D59 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7F09762D4246AB00EA5D59 /* Kingfisher */; };
+		7A7F097E2D424DBA00EA5D59 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7F097D2D424DBA00EA5D59 /* Reachability */; };
+		7A7F098E2D4258EE00EA5D59 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7F098D2D4258EE00EA5D59 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7A7F09372D4234A400EA5D59 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -33,7 +39,7 @@
 		7A7F09482D4234A400EA5D59 /* Exceptions for "NewsApp" folder in "NewsApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				App/Info.plist,
 			);
 			target = 7A7F091C2D4234A100EA5D59 /* NewsApp */;
 		};
@@ -65,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7F098E2D4258EE00EA5D59 /* SnapKit in Frameworks */,
+				7A7F09772D4246AB00EA5D59 /* Kingfisher in Frameworks */,
+				7A7F097E2D424DBA00EA5D59 /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +134,9 @@
 			);
 			name = NewsApp;
 			packageProductDependencies = (
+				7A7F09762D4246AB00EA5D59 /* Kingfisher */,
+				7A7F097D2D424DBA00EA5D59 /* Reachability */,
+				7A7F098D2D4258EE00EA5D59 /* SnapKit */,
 			);
 			productName = NewsApp;
 			productReference = 7A7F091D2D4234A100EA5D59 /* NewsApp.app */;
@@ -208,6 +220,11 @@
 			);
 			mainGroup = 7A7F09142D4234A100EA5D59;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7A7F09752D4246AB00EA5D59 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7A7F097C2D424D9300EA5D59 /* XCRemoteSwiftPackageReference "Reachability" */,
+				7A7F098C2D4258EE00EA5D59 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7A7F091E2D4234A100EA5D59 /* Products */;
 			projectDirPath = "";
@@ -291,12 +308,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T824455WAU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NewsApp/Info.plist;
+				INFOPLIST_FILE = NewsApp/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = News;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,12 +337,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T824455WAU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NewsApp/Info.plist;
+				INFOPLIST_FILE = NewsApp/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = News;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -569,6 +588,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A7F09752D4246AB00EA5D59 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.3;
+			};
+		};
+		7A7F097C2D424D9300EA5D59 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7A7F098C2D4258EE00EA5D59 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A7F09762D4246AB00EA5D59 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A7F09752D4246AB00EA5D59 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		7A7F097D2D424DBA00EA5D59 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A7F097C2D424D9300EA5D59 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+		7A7F098D2D4258EE00EA5D59 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A7F098C2D4258EE00EA5D59 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A7F09152D4234A100EA5D59 /* Project object */;
 }

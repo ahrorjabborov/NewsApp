@@ -1,0 +1,21 @@
+.DS_Store
+
+# Xcode user settings
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+*.xcscmblueprint/ 
+
+# Derived data
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+/.build/
+/Packages
+.swiftpm/xcode
+*.xcodeproj/project.xcworkspace/xcuserdata
